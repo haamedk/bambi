@@ -47,6 +47,21 @@ lazyPrediction <- function(x){
   rm(cols)
   rm(i)
   
+  # ---- HERE YOU CAN CHOOSE IF YOU WANT TO REMOVE ANY ATTRIBUTES ---- #
+  # x$age <- NULL
+  # x$sex <- NULL
+  # x$cp <- NULL          # Chest pain type
+  # x$trestbps <- NULL    # Resting Blood Pressure
+  # x$chol <- NULL        # Cholesterol
+  # x$fbs <- NULL         # Fasting blood sugar (above/below 120)
+  # x$restecg <- NULL     # Resting ECG results
+  # x$thalach <- NULL     # Max HR
+  # x$exang <- NULL       # Exercise induced angina (yes/no)
+  # x$oldpeak <- NULL     # ST depression induced by exercise relative to rest
+  # x$slope <- NULL       # the slope of the peak exercise ST segment (Up/Flat/Down)
+  # x$ca <- NULL          # number of major vessels colored by flourosopy (0-3)
+  # x$thal <- NULL        # Thalium radioisotope chemical stress test (Normal/Reversible/Fixed defect)
+  
   # Split the data into train- and test data  
   splitMaster <- sample.split(Y = x$goal,SplitRatio = 0.9)
   trainDataNorm <- x[splitMaster,]
